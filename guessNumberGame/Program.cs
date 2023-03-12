@@ -20,8 +20,7 @@ namespace guessNumberGame
 
                 // Chosing a random number 
                 int randomNumber = new Random().Next(1, 101);
-                Console.WriteLine(randomNumber);
-
+                
                 while (startAgain)
                 {
                     // Checking if the user has made 5 guesses
