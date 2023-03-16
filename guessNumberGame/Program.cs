@@ -1,34 +1,35 @@
-﻿using System.Drawing;
-using System;
-using System.Reflection.Metadata.Ecma335;
-using static System.Net.Mime.MediaTypeNames;
-
 namespace guessNumberGame
 {
     internal class Program
     {
+        public const int GUESS_LIMIT = 5;
         static void Main(string[] args)
         {
-            bool restartGame = true;
+            bool restartGame;
+            Random nmb = new Random();
 
-            while (restartGame)
+            while (true)
             {
-                bool startAgain = true;
+                bool startAgain;
 
                 // Initialize guess counter to 0
                 int guessCounter = 0;
 
-                // Chosing a random number 
-                int randomNumber = new Random().Next(1, 101);
-                
-                while (startAgain)
+                // Chosing a random number
+                int randomNumber = nmbr.Next(1, 101);
+
+                while (true)
                 {
                     // Checking if the user has made 5 guesses
-                    if (guessCounter == 5)
+                    if (guessCounter == GUESS_LIMIT)
                     {
                         Console.WriteLine("You have reached the maximum number of guesses.\nYou lose");
                         break;
                     }
+
+                    // Showing the number of remaining guesses
+                    int remainingGuesses = GUESS_LIMIT - guessCounter;
+                    Console.WriteLine($"You have {remainingGuesses} guesses remaining");
 
                     // Asking the user to guess the number 
                     Console.Write("Please guess a number between 1 and 100: ");
@@ -38,20 +39,16 @@ namespace guessNumberGame
                     // Using  if statements to check if the numbers are to high, to low or the same 
                     if (numberGuess > randomNumber)
                     {
-                        // Checking if the guess is within 5 of the random number
-                        if (numberGuess - randomNumber <= 5)
-                        {
-                            Console.WriteLine("You're close!");
-                        }
                         Console.WriteLine("The number you choose is too high, try again");
                     }
                     if (numberGuess < randomNumber)
                     {
-                        if (numberGuess - randomNumber <= 5)
-                        {
-                            Console.WriteLine("You're close!");
-                        }
                         Console.WriteLine("The number you choose is too low, try again");
+                    }
+                    // Checking if the guess is within 5 of the random number
+                    if (numberGuess - randomNumber <= 5)
+                    {
+                        Console.WriteLine("You're close!");
                     }
                     if (numberGuess == randomNumber)
                     {
