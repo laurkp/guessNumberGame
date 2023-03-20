@@ -43,7 +43,7 @@ namespace guessNumberGame
                         Console.WriteLine("The number you choose is too low, try again");
                     }
                     // Checking if the guess is within 5 of the random number
-                    if (numberGuess - randomNumber <= 5)
+                     if (Math.Abs(numberGuess - randomNumber) <= 5)
                     {
                         Console.WriteLine("You're close!");
                     }
