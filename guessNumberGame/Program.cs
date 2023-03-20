@@ -5,13 +5,10 @@ namespace guessNumberGame
         public const int GUESS_LIMIT = 5;
         static void Main(string[] args)
         {
-            bool restartGame;
             Random nmb = new Random();
 
             while (true)
             {
-                bool startAgain;
-
                 // Initialize guess counter to 0
                 int guessCounter = 0;
 
