@@ -16,7 +16,7 @@ namespace guessNumberGame
                 int guessCounter = 0;
 
                 // Chosing a random number
-                int randomNumber = nmbr.Next(1, 101);
+                int randomNumber = nmb.Next(1, 101);
 
                 while (true)
                 {
