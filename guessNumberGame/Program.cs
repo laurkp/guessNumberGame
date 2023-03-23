@@ -4,13 +4,17 @@ namespace guessNumberGame
 {
     internal class Program
     {
+        public const int GUESS_LIMIT = 5;
         static void Main(string[] args)
         {
             Random nmb = new Random();
 
             while (true)
             {
-                // Chosing a random number     
+                // Initialize guess counter to 0
+                int guessCounter = 0;
+
+                // Chosing a random number
                 int randomNumber = nmb.Next(1, 101);
 
                 int tryCounter = GuessNumberMethods.Counter();
@@ -43,7 +47,7 @@ namespace guessNumberGame
                     }
 
                     // Checking if the guess is within 5 of the random number
-                    if (Math.Abs(numberGuess - randomNumber) <= 5)
+                     if (Math.Abs(numberGuess - randomNumber) <= 5)
                     {
                         GuessNumberMethods.Almost();
                     }
