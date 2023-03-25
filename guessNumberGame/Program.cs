@@ -4,7 +4,6 @@ namespace guessNumberGame
 {
     internal class Program
     {
-        public const int GUESS_LIMIT = 5;
         static void Main(string[] args)
         {
             Random nmb = new Random();
