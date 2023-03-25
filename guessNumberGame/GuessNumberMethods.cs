@@ -49,7 +49,7 @@ namespace guessNumberGame
             return userInput;
         }
         /// <summary>
-        /// Prompt if the number choosen is to slow
+        /// Prompt if the number choosen is to low
         /// </summary>
         public static void ToLow()
         {
